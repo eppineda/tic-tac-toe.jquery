@@ -1,0 +1,29 @@
+{
+  "name": "tic-tac-toe.jquery",
+  "homepage": "https://github.com/eppineda/tic-tac-toe.jquery",
+  "authors": [
+    "Enrique Pineda <enrique.pineda@gmail.com>"
+  ],
+  "description": "a browser-based tic-tac-toe game, written with jquery",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "html5",
+    "tictactoe"
+  ],
+  "license": "NONE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0"
+  }
+}
