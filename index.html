@@ -5,25 +5,27 @@
         <title>tic-tac-toe</title>
         <script type="text/javascript"
         src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     </head>
     <body>
         <div>
             <link rel="stylesheet" style="text/css" href="tictactoe.css">
             <table>
                 <tr>
-                    <td id="cell0">&nbsp;</td>
-                    <td id="cell1">&nbsp;</td>
-                    <td id="cell2">&nbsp;</td>
+                    <td id="cell0" class="gridspace">&nbsp;</td>
+                    <td id="cell1" class="gridspace">&nbsp;</td>
+                    <td id="cell2" class="gridspace">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td id="cell3">&nbsp;</td>
-                    <td id="cell4">&nbsp;</td>
-                    <td id="cell5">&nbsp;</td>
+                    <td id="cell3" class="gridspace">&nbsp;</td>
+                    <td id="cell4" class="gridspace">&nbsp;</td>
+                    <td id="cell5" class="gridspace">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td id="cell6">&nbsp;</td>
-                    <td id="cell7">&nbsp;</td>
-                    <td id="cell8">&nbsp;</td>
+                    <td id="cell6" class="gridspace">&nbsp;</td>
+                    <td id="cell7" class="gridspace">&nbsp;</td>
+                    <td id="cell8" class="gridspace">&nbsp;</td>
                 </tr>
             </table>
             <p id="status" />
@@ -31,8 +33,15 @@
         <script type="text/javascript" src="tictactoe.js"></script>
         <script type="text/javascript">
         var game = new TicTacToe()
+        var clickHandler = function(event) {
+// parse id attribute for cell #
+            var cell = event.currentTarget.id.replace('cell', '')
 
-        $('#status').text(game.status)
+            $(event.currentTarget).text(game.next)
+            game.move(cell)
+        }
+
+        $('.gridspace').click(this, clickHandler)
         </script>
     </body>
 </html>
