@@ -41,6 +41,7 @@
 // mark the grid space
             game.move(cell)
             $(event.currentTarget).text(game.coords[cell])
+            $(event.currentTarget).effect('highlight')
 // update the bg colors of all spaces
             for (var c in game.coords) {
                 var selection = '#cell' + c
@@ -58,6 +59,8 @@
             } // for
 // update game status
             $('#status').text(game.status)
+            if (constants.winner === game.status)
+                $('#status').effect('bounce')
         } // clickHandler
 
         $('.gridspace').click(this, clickHandler)
