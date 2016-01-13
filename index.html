@@ -37,8 +37,9 @@
 // parse id attribute for cell #
             var cell = event.currentTarget.id.replace('cell', '')
 
-            $(event.currentTarget).text(game.next)
             game.move(cell)
+            game.statusColor(cell)
+            $(event.currentTarget).text(game.coords[cell])
         }
 
         $('.gridspace').click(this, clickHandler)

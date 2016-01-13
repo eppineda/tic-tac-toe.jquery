@@ -17,7 +17,6 @@ var TicTacToe = function() {
 TicTacToe.constants = constants
 
 TicTacToe.prototype.move = function(cell) {
-    console.log('cell', cell)
     if (' ' !== this.coords[cell])
         return // invalid move
     if (constants.winner == this.status || constants.draw == this.status)
