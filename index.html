@@ -38,11 +38,27 @@
             var cell = event.currentTarget.id.replace('cell', '') /* parse for
                 id attribute */
 
+// mark the grid space
             game.move(cell)
-            game.statusColor(cell)
             $(event.currentTarget).text(game.coords[cell])
+// update the bg colors of all spaces
+            for (var c in game.coords) {
+                var target = '#cell' + c
+                var color = "ready"
+                var nextColor = game.statusColor(c)
+
+                if ($(target).hasClass('ready'))
+                    color = 'ready'
+                else if ($(target).hasClass('winner'))
+                    color = 'winner'
+                else if ($(target).hasClass('draw'))
+                color = 'draw'
+                $(target).removeClass(color)
+                $(target).addClass(nextColor)
+            } // for
+// update game status
             $('#status').text(game.status)
-        }
+        } // clickHandler
 
         $('.gridspace').click(this, clickHandler)
         $('#status').text(constants.ready)
