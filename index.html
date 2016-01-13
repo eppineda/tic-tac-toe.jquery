@@ -32,10 +32,11 @@
         </div>
         <script type="text/javascript" src="tictactoe.js"></script>
         <script type="text/javascript">
+// initialize game
         var game = new TicTacToe()
         var clickHandler = function(event) {
-// parse id attribute for cell #
-            var cell = event.currentTarget.id.replace('cell', '')
+            var cell = event.currentTarget.id.replace('cell', '') /* parse for
+                id attribute */
 
             game.move(cell)
             game.statusColor(cell)
