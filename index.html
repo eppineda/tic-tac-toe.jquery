@@ -43,18 +43,18 @@
             $(event.currentTarget).text(game.coords[cell])
 // update the bg colors of all spaces
             for (var c in game.coords) {
-                var target = '#cell' + c
+                var selection = '#cell' + c
                 var color = "ready"
                 var nextColor = game.statusColor(c)
 
-                if ($(target).hasClass('ready'))
+                if ($(selection).hasClass('ready'))
                     color = 'ready'
-                else if ($(target).hasClass('winner'))
+                else if ($(selection).hasClass('winner'))
                     color = 'winner'
-                else if ($(target).hasClass('draw'))
+                else if ($(selection).hasClass('draw'))
                 color = 'draw'
-                $(target).removeClass(color)
-                $(target).addClass(nextColor)
+                $(selection).removeClass(color)
+                $(selection).addClass(nextColor)
             } // for
 // update game status
             $('#status').text(game.status)
