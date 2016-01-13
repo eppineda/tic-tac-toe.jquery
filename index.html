@@ -40,9 +40,11 @@
             game.move(cell)
             game.statusColor(cell)
             $(event.currentTarget).text(game.coords[cell])
+            $('#status').text(game.status)
         }
 
         $('.gridspace').click(this, clickHandler)
+        $('#status').text(constants.ready)
         </script>
     </body>
 </html>
