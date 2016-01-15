@@ -14,7 +14,7 @@ var TicTacToe = function() {
     this.coordsWinning = []
 }
 
-TicTacToe.constants = constants
+TicTacToe.prototype.constants = constants
 
 TicTacToe.prototype.move = function(cell) {
     if (' ' !== this.coords[cell])
