@@ -38,6 +38,8 @@
             var cell = event.currentTarget.id.replace('cell', '') /* parse for
                 id attribute */
 
+            if (constants.playing !== game.status && constants.ready !==
+                game.status) return // nothing to do
 // mark the grid space
             game.move(cell)
             $(event.currentTarget).text(game.coords[cell])
